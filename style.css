@@ -47,6 +47,55 @@ footer{
     -webkit-backdrop-filter: blur( 19.5px );
     border-radius: 10px;
 }
+.generarInforme__nav>h1{
+    margin-left: 20px;
+}
+.generarInforme__nav--form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.generarInforme__nav--form--button{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.generarInforme__nav--form--button>button{
+    appearance: none;
+    outline: none;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 50px;
+    margin-top: 12px;
+    padding: 16px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    line-height: normal;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+}
+.generarInforme__nav--form--button>button:disabled{
+    pointer-events: none;
+}
+.generarInforme__nav--form--button>button:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+    background-color: var(--verde-osc);
+    color: var(--blanco);
+}
+.generarInforme__nav--form--button>button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
 
 
 .oficioDia{
