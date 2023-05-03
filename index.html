@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
 <body>
     
 <div id="grilla">
@@ -70,8 +71,8 @@
     <div class="oficioDia">
         <div class="oficioDia__chart">
           
-            <div class="chart-wrap horizontal"> <!-- quitar el estilo "horizontal" para visualizar verticalmente -->
-                <div class="title">Oficio por día</div>
+           <!-- <div class="chart-wrap horizontal">  quitar el estilo "horizontal" para visualizar verticalmente 
+                <div class="title">Oficio contestados por día</div>
                
                 <div class="grid">
                     <div class="bar" style="--bar-value:85%;" data-name="Your Blog" title="Your Blog 85%"></div>
@@ -84,8 +85,8 @@
                     <div class="bar" style="--bar-value:20%;" data-name="Other" title="Other 20%"></div>
                 </div>
               </div>
-              <div class="chart-wrap horizontal"> <!-- quitar el estilo "horizontal" para visualizar verticalmente -->
-                <div class="title">Oficio por día</div>
+              <div class="chart-wrap horizontal">  quitar el estilo "horizontal" para visualizar verticalmente
+                <div class="title">Oficio contestados por personas</div>
                
                 <div class="grid">
                     <div class="bar" style="--bar-value:85%;" data-name="Your Blog" title="Your Blog 85%"></div>
@@ -98,6 +99,10 @@
                     <div class="bar" style="--bar-value:20%;" data-name="Other" title="Other 20%"></div>
                 </div>
               </div>
+              -->
+
+              <canvas id="chart-dia" style="width:100%;max-width:700px"></canvas>
+              <canvas id="chart-persona" style="width:100%;max-width:700px"></canvas>
 
         </div>
     </div>
@@ -106,11 +111,40 @@
     <div class="logros">
         <div class="logros__nav">
             <h1>Logros</h1>
-            
-            <div id="Progress_Status">
-                <div id="myprogressBar"></div>
+             
+        <div class="wrapper__chart">
+            <h2>Informes generados</h2>
+            <div class="progress-bar">
+                <div class="progress"></div>
             </div>
-            <button onclick="update()">Start Download</button> 
+
+            <br>
+
+            <h2>Oficios contestados</h2>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <br>
+
+            <h2>Horas trabajadas</h2>
+            <div class="progress-bar">
+                <div class="progress"></div>
+              </div>
+            <br>
+
+            <h2>Días en racha</h2>
+            <div class="progress-bar">
+                <div class="progress"></div>
+              </div>
+            <br>
+
+            <h2>Progreso realizado</h2>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+
+
         </div>
     </div>
 
@@ -128,6 +162,7 @@
 </div>
 
     <script src="index.js"></script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
       $(document).ready(function () {

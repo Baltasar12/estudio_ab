@@ -34,7 +34,6 @@ footer{
     display: flex;
     justify-content: center;
     grid-area: gi;
-    border: solid black 2px;
 }
 .generarInforme__nav{
     margin-top: 10%;
@@ -102,7 +101,6 @@ footer{
     display: flex;
     justify-content: center;
     grid-area: oD;
-    border: solid purple 2px;
 }
 .oficioDia__chart{
   display: flex;
@@ -112,7 +110,7 @@ footer{
 .chart-wrap {/*para justar el tamaño de las barras*/
   --chart-width:200px;
   --grid-color:#aaa;
-  --bar-color:#F16335;
+  --bar-color: #007EA7;
   --bar-thickness:40px;
   --bar-rounded: 3px;
   --bar-spacing:10px;
@@ -121,17 +119,17 @@ footer{
   width:var(--chart-width);
 }
 
-.chart-wrap .title{
+/* .chart-wrap .title{
   font-weight:bold;
   text-align:center;
   white-space:nowrap;
 }
-
+ */
 /* cuando definimos el gráfico en horizontal, lo giramos 90 grados */
-.chart-wrap.horizontal .grid{
+/* .chart-wrap.horizontal .grid{
   transform:rotate(-90deg);
 }
-
+ */
 .chart-wrap.horizontal .bar::after{
   /* giramos las letras para horizontal*/
   transform: rotate(45deg);
@@ -139,16 +137,16 @@ footer{
   display: block;
 }
 
-.chart-wrap .grid{
+/* .chart-wrap .grid{
   margin-left:50px;
   position:relative;
   height:100%;
   width:100%;
   border-left:2px solid var(--grid-color);
-}
+} */
 
 /* posicionamos el % del gráfico*/
-.chart-wrap .grid::before{
+/* .chart-wrap .grid::before{
   font-size:0.8em;
   font-weight:bold;
   content:'0%';
@@ -164,9 +162,9 @@ footer{
   right:-1.5em;
   top:-1.5em;
 }
-
+ */
 /* giramos las valores de 0% y 100% para horizontal */
-.chart-wrap.horizontal .grid::before, .chart-wrap.horizontal .grid::after {
+/* .chart-wrap.horizontal .grid::before, .chart-wrap.horizontal .grid::after {
   transform: rotate(90deg);
 }
 
@@ -188,7 +186,7 @@ footer{
   padding:10px;
   display:inline-block;
   white-space:nowrap;
-}
+} */
 
 
 
@@ -196,7 +194,6 @@ footer{
     display: flex;
     justify-content: center;
     grid-area: lo;
-    border: solid brown 2px;
 }
 .logros__nav{
     margin-top: 10%;
@@ -209,19 +206,29 @@ footer{
     -webkit-backdrop-filter: blur( 19.5px );
     border-radius: 10px;
 }
+.logros__nav>h1{
+  margin-left: 20px;
+}
+.wrapper__chart>h2{
+  margin-left: 20px;
+}
 
-#Progress_Status {
-  width: 50%;
+.progress-bar {
+  margin-left: 20px;
+  border-radius: 10px;
+  justify-content: center;
+  width: 85%;
   background-color: #ddd;
 }
-  
-#myprogressBar {
+.progress {
   width: 1%;
-  height: 35px;
+  border-radius: 10px;
+  height: 30px;
   background-color: #4CAF50;
   text-align: center;
   line-height: 32px;
   color: black;
+  overflow: hidden;
 }
 
 
@@ -288,7 +295,7 @@ footer{
   .logo {
     order: 1;
     font-size: 2.3rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 2rem;
   }
   
   
@@ -377,6 +384,7 @@ footer{
     }
   
     .logo {
+      margin-top: 0;
       position: absolute;
       top: 5px;
       right: 15px;
@@ -495,4 +503,112 @@ a:hover::before {
    /*background: linear-gradient(0deg, rgba(85,62,255,1) 20%, rgba(177,166,254,1) 85%);*/
     line-height: 1.3;
     font-family: Menlo, monospace;
+}
+
+
+
+
+@media (max-width: 1024px) {
+  
+  
+    #grilla{
+      display: grid;
+      grid-template-areas: 
+      "header header header"
+      "none bvn none"
+      "none gi no"
+      "none oD none"
+      "none lo none"
+      "footer footer footer"
+      ;
+      grid-template-columns: 26% 48% 26%;
+      grid-template-rows: 5% auto;
+    }
+
+    .generarInforme__nav{
+      margin-top: 10%;
+      width: 50vh;
+      height: 100vh;
+      color: white;
+      background: rgba( 0, 23, 31, 0.8 );
+      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+      backdrop-filter: blur( 19.5px );
+      -webkit-backdrop-filter: blur( 19.5px );
+      border-radius: 10px;
+    }
+ 
+    .generarInforme__nav--form{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      margin-left: 20px;
+      margin-right: 20px;
+  }
+  .generarInforme__nav--form--button{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+  }
+  .generarInforme__nav--form--button>button{
+      appearance: none;
+      outline: none;
+      box-sizing: border-box;
+      display: inline-block;
+      height: 55px;
+      margin-top: 12px;
+      padding: 10px 24px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      line-height: normal;
+      transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
+      will-change: transform;
+  }
+  .generarInforme__nav--form--button>button:disabled{
+      pointer-events: none;
+  }
+  .generarInforme__nav--form--button>button:hover{
+      box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+      transform: translateY(-2px);
+      background-color: var(--verde-osc);
+      color: var(--blanco);
+  }
+  .generarInforme__nav--form--button>button:active {
+      box-shadow: none;
+      transform: translateY(0);
+  }
+  
+
+
+
+
+
+
+  .logros__nav{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 10%;
+    width: 50vh;
+    height: 100vh;
+    color: black;
+    background: rgba( 0, 23, 31, 0.8 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 19.5px );
+    -webkit-backdrop-filter: blur( 19.5px );
+    border-radius: 10px;
+}
+  .logros__nav>h1{
+    margin-left: 32%;
+  }
+  .logros__nav>h2{
+  margin-left: 15px;
+}
 }
