@@ -27,7 +27,7 @@ setInterval(() => {
 
 var xValues = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
 var yValues = [55, 49, 44, 24, 15];
-var barColors = ["red", "green","blue","orange","brown"];
+var barColors = ["red", "red","red","red","red"];
 
 new Chart("chart-dia", {
   type: "bar",
