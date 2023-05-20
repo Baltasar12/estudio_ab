@@ -522,7 +522,7 @@ tr:hover td {
       margin-top: 0;
       margin-bottom: 5%;
       width: 75vw;
-      height: 70vh;
+      height: 90vh;
       color: var(--blanco);
       background: var(--negro);
       box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
