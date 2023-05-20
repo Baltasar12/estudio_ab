@@ -1,9 +1,9 @@
 :root{
-  --negro:#0D0D0D; 
+  --negro:#404040; 
   --azul-osc:#16348C;
   --azul-cl:#2148BF;
   --azul-cl2:#1C3FA6;
-  --azul-osc2:#084DA6;
+  --azul-osc2:#012840;
   --blanco:#F1ECE9;
 }
 /*----GENERAL----*/
@@ -54,7 +54,7 @@ footer{
 .generarInforme__nav{
     margin-top: 10%;
     width: 45vh;
-    height: 65vh;
+    height: 67vh;
     color: var(--blanco);
     background: var(--negro);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -122,12 +122,14 @@ footer{
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
+  height: auto;
 }
 
 
 .chart--container{
   position: relative;
-  margin: auto;
+  margin: 14%;
 }
 
 
@@ -141,7 +143,7 @@ footer{
 .logros__nav{
     margin-top: 10%;
     width: 45vh;
-    height: 65vh;
+    height: 67vh;
     color: var(--blanco);
    /*  background: rgba( 74, 144, 226, 0.4 ); */
    background: var(--negro);
@@ -241,6 +243,38 @@ footer{
     font-size: 2.3rem;
     margin-bottom: 2rem;
   }
+
+  .menu-items .dropdown {
+    position: relative;
+  }
+  
+  .menu-items .dropdown .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--azul-osc2);
+    padding: 10px;
+    width: 200px;
+  }
+  
+  .menu-items .dropdown:hover .submenu {
+    display: block;
+  }
+  
+  .menu-items .dropdown .submenu li {
+    margin: 5px 0;
+  }
+  
+  .menu-items .dropdown .submenu li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .menu-items .dropdown .submenu li a:hover {
+    color: var(--blanco);
+  }
+  
   
   
   /* ......../ media query /.......... */
@@ -421,7 +455,7 @@ a::before {
     width: 100%;
     height: 4px;
     border-radius: 4px;
-    background-color:red;
+    background-color:var(--blanco);
     bottom: 0;
     left: 0;
     transform-origin: right;
@@ -452,29 +486,28 @@ a:hover::before {
 
 
 
-@media (max-width: 1024px) {
-  
+@media screen and (max-width: 1366px) and (max-height:617px) {
+ 
   
     #grilla{
       display: grid;
       grid-template-areas: 
-      "header header header"
-      "none bvn none"
-      "none gi no"
-      "none oD none"
-      "none lo none"
-      "footer footer footer"
+    "header header header"
+    "bnv none none"
+    "gi oD lo"
+    "footer footer footer"
       ;
-      grid-template-columns: 26% 48% 26%;
-      grid-template-rows: 5% auto;
+      grid-template-columns: 25% 50% 25%;
+      grid-template-rows: 8% auto;
     }
 
     .generarInforme__nav{
       margin-top: 10%;
+      margin-bottom: 5%;
       width: 50vh;
-      height: 100vh;
+      height: 110vh;
       color: white;
-      background: rgba( 0, 23, 31, 0.8 );
+      background: var(--negro);
       box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
       backdrop-filter: blur( 19.5px );
       -webkit-backdrop-filter: blur( 19.5px );
@@ -541,9 +574,9 @@ a:hover::before {
     flex-direction: column;
     margin-top: 10%;
     width: 50vh;
-    height: 100vh;
-    color: black;
-    background: rgba( 0, 23, 31, 0.8 );
+    height: 110vh;
+    color: var(--blanco);
+    background: var(--negro);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 19.5px );
     -webkit-backdrop-filter: blur( 19.5px );
@@ -556,3 +589,5 @@ a:hover::before {
   margin-left: 15px;
 }
 }
+
+

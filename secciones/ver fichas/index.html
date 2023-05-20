@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Ver fichas</title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<body>
+    
+<div id="grilla">
+
+    <nav class="navbar">
+        <div class="navbar-container container">
+          <input type="checkbox" name="" id="">
+          <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+          </div>
+          <ul class="menu-items">
+            <li class="dropdown">
+              <a href="#fichaOficios">Ficha oficios</a>
+              <ul class="submenu">
+                <li><a href="#">Ver fichas</a></li>
+                <li><a href="../cargar ficha/index.html">Cargar nueva ficha</a></li>
+                <li><a href="#">Ver todos los oficios</a></li>
+                <li><a href="#">Ver oficios pendientes propios</a></li>
+              </ul>
+            </li>
+            <li><a href="#estadisticas">Estadísticas</a></li>
+            <li><a href="#supervision">Supervisión</a></li>
+            <li><a href="#salir">Salir</a></li>
+          </ul>
+          <a href="#"><img src="../../vmp.png" alt="V.M.P"></a>
+        </div>
+      </nav>
+      
+
+    
+
+    <div class="bienvenida">
+        <h1>Usuario conectado:</h1>
+        <h2>Username</h2>
+    </div>      
+
+
+
+    <div class="nuevaFicha">
+
+        <div class="nuevaFicha__nav">
+
+            <h1>Crear nueva ficha</h1>
+
+            <form class="nuevaFicha__nav--form">
+
+<!--                 <div>
+                <label for="caratulaProc">Carátula proceso:</label> <input type="text" name="caratulaProc">
+                    <br>
+                <label for="numFicha">N° ficha VMP:</label> <input type="number" name="numFicha">
+                    <br>
+                <label for="analista">Analista VMP:</label> <input type="text" name="analista">
+                    <br>
+                <label for="responsableCarga">Responsable cargar:</label> <input type="text" name="responsableCarga">
+                    <br>
+                <label for="fechaAlta">Fecha alta ficha:</label> <input type="date" name="fechaAlta">
+                    <br>
+                <label for="nombreCliente">Nombre cliente:</label> <input type="text" name="nombreCliente">
+                    <br>
+                <label for="dniCliente">DNI/CUIT cliente:</label> <input type="number" name="dniCliente">
+                    <br>
+                <label for="provinciaOficio">Provincia oficio:</label> <input type="text" name="provinciaOficio">
+                    <br>
+                <label for="juzgado">Juzgado/Repartición:</label> <input type="text" name="juzgado">
+                    <br>
+                <label for="nominacion">Nominación:</label><input type="text" name="nominacion">
+                    <br>
+                <label for="centroJudicial">Centro judicial:</label><input type="text" name="centroJudicial">
+                    <br>
+                <label for="expedienteJudicial">Expediente judicial:</label><input type="text" name="expedienteJudicial">
+                    <br>
+                <label for="canalOficio">Canal rsta. oficio:</label><input type="text" name="canalOficio">
+                    <br>
+                <label for="emailR">Email p/respuesta:</label><input type="text" name="emailR">
+                    <br>
+                <label for="observaciones">Observaciones:</label><input type="text" name="observaciones">    
+                </div>  -->
+
+                <div class="mahi_holder">
+                    <div class="container">
+                      <div class="row bg_1">
+                            <div class="col-3">
+                                <input class="effect-8" type="text" placeholder="Carátula proceso:">
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                            </div>
+
+                            <div class="col-3">
+                                <input class="effect-8" type="number" placeholder="N° ficha VMP:t">
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                            </div>
+
+                            <div class="col-3">
+                                <input class="effect-8" type="text" placeholder="Analista VMP:">
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                            </div>
+
+                            <div class="col-3">
+                                <input class="effect-8" type="text" placeholder="Responsable cargar:">
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                            </div>
+
+              
+
+                            <div class="col-3">
+                                <input class="effect-8" type="text" placeholder="Nombre cliente:">
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                            </div>
+
+                            <div class="col-3">
+                                <input class="effect-8" type="number" placeholder="DNI/CUIT cliente:">
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                            </div>
+
+                            <div class="col-3">
+                                <input class="effect-8" type="text" placeholder="Provincia oficio:">
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                            </div>
+
+                            <div class="col-3">
+                                <input class="effect-8" type="text" placeholder="Juzgado/Repartición:">
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                            </div>
+
+                            <div class="col-3">
+                                <input class="effect-8" type="text" placeholder="Nominación:">
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                            </div>
+
+                            <div class="col-3">
+                                <input class="effect-8" type="text" placeholder="Centro judicial:">
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                            </div>
+
+                            <div class="col-3">
+                                <input class="effect-8" type="text" placeholder="Expediente judicial:">
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                            </div>
+
+                            <div class="col-3">
+                                <input class="effect-8" type="text" placeholder="Canal rsta. oficio:">
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                            </div>
+
+                            <div class="col-3">
+                                <input class="effect-8" type="email" placeholder="Email p/respuesta:">
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                            </div>
+
+                            <div class="col-3">
+                                <input class="effect-8" type="text" placeholder="Observaciones:">
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                            </div>
+
+                            <div class="col-3">
+                                <input class="effect-8" type="date" placeholder="Fecha alta ficha:">
+                                <span class="focus-border">
+                                    <i></i>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+    <div class="botonesFichas">
+
+       
+        <form class="botonesFichas__form">
+            <div class="botonesFichas__btn">
+            <button >Buscar</button>
+            <button >Atras</button>
+            <button >Adelante</button>
+            <button >Modificar datos de la ficha</button>
+            <button >Cargar nuevo oficio</button>
+            </div>
+        </form>
+      
+    
+    </div>
+
+
+
+
+<footer>
+    <div class="main__footer">
+        <ul class="main__footer__list">
+          <li class="main__footer__list__item"><a href="#"></a></li>
+        </ul>
+      </div>
+</footer>
+
+</div>
+
+    <script src="index.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Add smooth scrolling to all links
+        $("a").on("click", function (event) {
+          // Make sure this.hash has a value before overriding default behavior
+          if (this.hash !== "") {
+            // Prevent default anchor click behavior
+            event.preventDefault();
+  
+            // Store hash
+            var hash = this.hash;
+  
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+            $("html, body").animate(
+              {
+                scrollTop: $(hash).offset().top,
+              },
+              800,
+              function () {
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+              }
+            );
+          } // End if
+        });
+      });
+
+
+
+
+    </script>
+</body>
+</html>

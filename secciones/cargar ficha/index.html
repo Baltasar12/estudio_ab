@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Cargar ficha</title>
 </head>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <body>
@@ -14,22 +18,32 @@
 
     <nav class="navbar">
         <div class="navbar-container container">
-            <input type="checkbox" name="" id="">
-            <div class="hamburger-lines">
-                <span class="line line1"></span>
-                <span class="line line2"></span>
-                <span class="line line3"></span>
-            </div>
-            <ul class="menu-items">
-                <li><a href="#fichaOficios">Ficha oficios</a></li>
-                <li><a href="#estadisticas">Estadísticas</a></li>
-                <li><a href="#supervision">Supervisión</a></li>
-                <li><a href="#salir">Salir</a></li>
-            </ul>
-            <h1 class="logo">V.M.P</h1>
+          <input type="checkbox" name="" id="">
+          <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+          </div>
+          <ul class="menu-items">
+            <li class="dropdown">
+              <a href="#fichaOficios">Ficha oficios</a>
+              <ul class="submenu">
+                <li><a href="../ver fichas/index.html">Ver fichas</a></li>
+                <li><a href="#">Cargar nueva ficha</a></li>
+                <li><a href="../ver todos oficios/index.html">Ver todos los oficios</a></li>
+                <li><a href="../ver oficios pendientes/index.html">Ver oficios pendientes propios</a></li>
+              </ul>
+            </li>
+            <li><a href="#estadisticas">Estadísticas</a></li>
+            <li><a href="#supervision">Supervisión</a></li>
+            <li><a href="#salir">Salir</a></li>
+          </ul>
+          <a href="#"><img src="../../vmp.png" alt="V.M.P"></a>
         </div>
-    </nav>
+      </nav>
+      
 
+    
 
     <div class="bienvenida">
         <h1>Usuario conectado:</h1>
@@ -264,6 +278,23 @@
           } // End if
         });
       });
+
+
+
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var hasDropdownItems = document.getElementsByClassName('has-dropdown');
+        
+        for (var i = 0; i < hasDropdownItems.length; i++) {
+            hasDropdownItems[i].addEventListener('click', function() {
+            this.classList.toggle('active');
+            });
+        }
+        });
+
+
+
+
     </script>
 </body>
 </html>
