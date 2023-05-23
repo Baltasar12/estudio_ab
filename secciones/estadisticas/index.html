@@ -28,17 +28,17 @@
             <li class="dropdown">
               <a href="#">Ficha oficios</a>
               <ul class="submenu">
-                <li><a href="./secciones/ver fichas/index.html">Ver fichas</a></li>
-                <li><a href="./secciones/cargar ficha/index.html">Cargar nueva ficha</a></li>
-                <li><a href="./secciones/ver todos oficios/index.html">Ver todos los oficios</a></li>
-                <li><a href="./secciones/ver oficios pendientes/index.html">Ver oficios pendientes propios</a></li>
+                <li><a href="../ver fichas/index.html">Ver fichas</a></li>
+                <li><a href="../cargar ficha/index.html">Cargar nueva ficha</a></li>
+                <li><a href="../ver todos oficios/index.html">Ver todos los oficios</a></li>
+                <li><a href="../ver oficios pendientes/index.html">Ver oficios pendientes propios</a></li>
               </ul>
             </li>
-            <li><a href="./secciones/estadisticas/index.html">Estadísticas</a></li>
-            <li><a href="./secciones/supervision/index.html">Supervisión</a></li>
+            <li><a href="#">Estadísticas</a></li>
+            <li><a href="../supervision/index.html">Supervisión</a></li>
             <li><a href="#salir">Salir</a></li>
           </ul>
-          <a href="#"><img src="./vmp.png" alt="V.M.P"></a>
+          <a href="../../index.html"><img src="../../vmp.png" alt="V.M.P"></a>
         </div>
       </nav>
 
@@ -50,33 +50,6 @@
 
 
 
-    <div class="generarInforme">
-
-        <div class="generarInforme__nav">
-
-            <h1>Generar Informe</h1>
-
-            <form class="generarInforme__nav--form">
-                <label for="fechaIni">Fecha de inicio:</label> <input type="date" name="fechaIni">
-                    <br>
-                <label for="fechaFin">Fecha final:</label> <input type="date" name="fechaFn">
-                    <br>
-                <label for="user">Usuario/Responsable:</label> <input type="text" name="user">
-                    <br>
-                <label for="provincia">Provincia:</label> <input type="text" name="provincia">
-                    <br>
-                <div class="generarInforme__nav--form--button">
-                    <button>Oficios al banco</button>
-                    <button>Oficios pendientes de dilig.(todas las prov.)</button>
-                    <button>Oficios pendientes de diligenciamiento</button>
-                    <button>Oficios por fecha de diligenciamiento</button>
-                    <button>Oficos por fecha de dilg. y resp.</button>
-                </div>
-            </form>
-
-        </div>
-
-    </div>
 
 
 
@@ -84,50 +57,14 @@
         <div class="oficioDia__chart">
         
             <div class="chart--container">
+
               <canvas id="chart-dia" style="width:100%;max-width:700px"></canvas>
+                
               <canvas id="chart-persona" style="width:100%;max-width:700px"></canvas>
+              
+              <canvas id="chart" style="width:100%;max-width:700px"></canvas>
+            
             </div>
-
-        </div>
-    </div>
-
-
-    <div class="logros">
-        <div class="logros__nav">
-            <h1>Logros</h1>
-             
-        <div class="wrapper__chart">
-            <h2>Informes generados</h2>
-            <div class="progress-bar">
-                <div class="progress"></div>
-            </div>
-
-            <br>
-
-            <h2>Oficios contestados</h2>
-            <div class="progress-bar">
-                <div class="progress"></div>
-            </div>
-            <br>
-
-            <h2>Horas trabajadas</h2>
-            <div class="progress-bar">
-                <div class="progress"></div>
-              </div>
-            <br>
-
-            <h2>Días en racha</h2>
-            <div class="progress-bar">
-                <div class="progress"></div>
-              </div>
-            <br>
-
-            <h2>Progreso realizado</h2>
-            <div class="progress-bar">
-                <div class="progress"></div>
-            </div>
-        </div>
-
 
         </div>
     </div>
@@ -175,6 +112,68 @@
           } // End if
         });
       });
+
+
+
+
+
+    var xValues = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
+    var yValues = [55, 49, 44, 24, 15];
+    var barColors = ["#074073", "#074073","#074073","#074073","#074073"];
+
+            new Chart("chart-dia", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+                }]
+            },
+            options: {
+                legend: {display: false},
+                title: {
+                display: true,
+                text: "Oficios contestados por días"
+                }
+            }
+            });
+            new Chart("chart-persona", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+                }]
+            },
+            options: {
+                legend: {display: false},
+                title: {
+                display: true,
+                text: "Oficios contestados por persona"
+                }
+            }
+            });
+            new Chart("chart", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+                }]
+            },
+            options: {
+                legend: {display: false},
+                title: {
+                display: true,
+                text: "Oficios contestados por persona"
+                }
+            }
+            });
+
+
     </script>
 </body>
 </html>
