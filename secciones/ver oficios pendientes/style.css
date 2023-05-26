@@ -30,7 +30,7 @@
       "footer  footer"
       ;
       grid-template-columns: 80% 20% ;
-      grid-template-rows: 9% 12% 74.4vh 6%;
+      grid-template-rows: 9% 12% 74.7vh 6%;
   }
   
   
@@ -41,8 +41,10 @@
   }
   .bienvenida>h1{
     margin-left: 30px;
+    margin-bottom: 5px;
   }
   .bienvenida>h2{
+    margin-top: 0;
     margin-left: 32px;
   }
   
@@ -236,6 +238,7 @@ tr:hover td {
     .menu-items {
       order: 2;
       display: flex;
+      height: 19px;
     }
     
     .menu-items li {
@@ -462,12 +465,12 @@ tr:hover td {
               grid-auto-flow: column;
           }
   }               
-  a {
+  .sub {
       color: white;
       position: relative;
       text-decoration: none;
   }
-  a::before {
+  .sub::before {
       content: '';
       position: absolute;
       width: 100%;
@@ -480,7 +483,7 @@ tr:hover td {
       transform: scaleX(0);
       transition: transform .3s ease-in-out;
   }
-  a:hover::before {
+  .sub:hover::before {
       transform-origin: left;
       transform: scaleX(1);
   }
