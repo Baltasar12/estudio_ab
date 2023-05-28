@@ -27,10 +27,11 @@
       "header  header"
       "bnv  none"
       "nF  bF"
+      "F F"
       "footer  footer"
       ;
       grid-template-columns: 80% 20% ;
-      grid-template-rows: 9% 12% 74.7vh 6%;
+      grid-template-rows: 5% 8% 74.7vh 70vh 3%;
   }
   
   
@@ -143,7 +144,7 @@
   .botonesFichas__btn>button:hover{
     box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
     transform: translateY(-2px);
-    background-color: var(--verde-osc);
+    background-color: var(--azul-osc2);
     color: var(--blanco);
   }
   .botonesFichas__btn>button:active {
@@ -151,6 +152,125 @@
     transform: translateY(0);
   }
   
+
+  .AyD{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .AyD>button{
+    appearance: none;
+    outline: none;
+    box-sizing: border-box;
+    display: inline-block;
+    height: 80px;
+    width: 50%;
+    padding: 16px 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    line-height: normal;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+  }
+  .AyD>button:disabled{
+    pointer-events: none;
+  }
+  .AyD>button:hover{
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+    background-color: var(--azul-osc2);
+    color: var(--blanco);
+  }
+  .AyD>button:active {
+    box-shadow: none;
+    transform: translateY(0);
+  }
+
+
+
+  .Ficha{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    grid-area: F;
+  }
+  .Ficha__nav{
+    margin-top: 0;
+    width: 95vw;
+    height: 50vh;
+    color: var(--blanco);
+    background: var(--negro);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 19.5px );
+    -webkit-backdrop-filter: blur( 19.5px );
+    border-radius: 10px;
+}
+  /*----TABLA----*/
+  table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.header_fixed {
+    max-height: 100vh;
+    width: 100%;
+    overflow: auto;
+    border: 1px solid #dddddd;
+}
+
+.header_fixed thead th {
+    position: sticky;
+    top: 0;
+    background-color: black;
+    color: #e6e7e8;
+    font-size: 18px;
+}
+
+th,
+td {
+  padding: 10px 20px;
+  font-size: 17px;
+  color: var(--negro)
+}
+
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+    background-color: #edeef1;
+}
+
+tr:hover td {
+  color: var(--blanco);
+  cursor: pointer;
+  background-color: var(--azul-osc2);
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
+
+
   
   
   /*----HEADER----*/
