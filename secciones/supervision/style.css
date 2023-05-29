@@ -22,15 +22,16 @@
   
   /*----POR ID----*/
   #grilla{
-      display: grid;
-      grid-template-areas: 
-      "header  header"
-      "bnv  none"
-      "nF  bF"
-      "footer  footer"
-      ;
-      grid-template-columns: 80% 20% ;
-      grid-template-rows: 9% 12% 74.7vh 6%;
+    display: grid;
+    grid-template-areas: 
+    "header  header"
+    "bnv  none"
+    "nF  bF"
+    "F F"
+    "footer  footer"
+    ;
+    grid-template-columns: 80% 20% ;
+    grid-template-rows: 5% 8% 74.7vh 70vh 3%;
   }
   
   
@@ -150,6 +151,80 @@
     box-shadow: none;
     transform: translateY(0);
   }
+
+
+
+  .Ficha{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    grid-area: F;
+  }
+  .Ficha__nav{
+    margin-top: 0;
+    width: 95vw;
+    height: 50vh;
+    color: var(--blanco);
+    background: var(--negro);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 19.5px );
+    -webkit-backdrop-filter: blur( 19.5px );
+    border-radius: 10px;
+}
+  /*----TABLA----*/
+  table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.header_fixed {
+    max-height: 100vh;
+    width: 100%;
+    overflow: auto;
+    border: 1px solid #dddddd;
+}
+
+.header_fixed thead th {
+    position: sticky;
+    top: 0;
+    background-color: black;
+    color: #e6e7e8;
+    font-size: 18px;
+}
+
+th,
+td {
+  padding: 10px 20px;
+  font-size: 17px;
+  color: var(--negro)
+}
+
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+tr:nth-child(odd) {
+    background-color: #edeef1;
+}
+
+tr:hover td {
+  color: var(--blanco);
+  cursor: pointer;
+  background-color: var(--azul-osc2);
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
   
   
   
@@ -461,25 +536,24 @@
   
   
     @media screen and (max-width: 1366px) and (max-height:617px) {
-   
-    
       #grilla{
         display: grid;
         grid-template-areas: 
         "header  header"
         "bnv  none"
         "nF  bF"
+        "F F"
         "footer  footer"
         ;
-        grid-template-columns: 80% 20%;
-        grid-template-rows: 8% auto;
+        grid-template-columns: 80% 20% ;
+        grid-template-rows: 7% 8% 100vh 67vh 3%;
       }
   
       .nuevaFicha__nav{
         margin-top: 0;
         margin-bottom: 5%;
         width: 75vw;
-        height: 110vh;
+        height: 95vh;
         color: var(--blanco);
         background: var(--negro);
         box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -487,5 +561,59 @@
         -webkit-backdrop-filter: blur( 19.5px );
         border-radius: 10px;
     }
+    .Ficha__nav{
+      margin-top: 0;
+      width: 95vw;
+      height: 80vh;
+      color: var(--blanco);
+      background: var(--negro);
+      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+      backdrop-filter: blur( 19.5px );
+      -webkit-backdrop-filter: blur( 19.5px );
+      border-radius: 10px;
   }
   
+  }
+  
+
+
+  @media screen and (max-width: 1536px) and (max-height:746px) {
+   
+    
+    #grilla{
+      display: grid;
+      grid-template-areas: 
+      "header  header"
+      "bnv  none"
+      "nF  bF"
+      "F F"
+      "footer  footer"
+      ;
+      grid-template-columns: 80% 20% ;
+      grid-template-rows: 5% 8% 100vh 67vh 3%;
+    }
+
+    .nuevaFicha__nav{
+      margin-top: 0;
+      margin-bottom: 5%;
+      width: 75vw;
+      height: 95vh;
+      color: var(--blanco);
+      background: var(--negro);
+      box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+      backdrop-filter: blur( 19.5px );
+      -webkit-backdrop-filter: blur( 19.5px );
+      border-radius: 10px;
+  }
+  .Ficha__nav{
+    margin-top: 0;
+    width: 95vw;
+    height: 60vh;
+    color: var(--blanco);
+    background: var(--negro);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 19.5px );
+    -webkit-backdrop-filter: blur( 19.5px );
+    border-radius: 10px;
+}
+}
