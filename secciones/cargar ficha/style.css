@@ -518,3 +518,32 @@ input[type="text"]{font: 15px/24px "Lato", Arial, sans-serif; color: #333; width
     border-radius: 10px;
 }
 }
+
+@media screen and (max-width: 1366px) and (max-height:667px) {
+ 
+  
+  #grilla{
+    display: grid;
+    grid-template-areas: 
+    "header  header"
+    "bnv  none"
+    "nF  bF"
+    "footer  footer"
+    ;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: 8% auto;
+  }
+
+  .nuevaFicha__nav{
+    margin-top: 0;
+    margin-bottom: 5%;
+    width: 75vw;
+    height: 100vh;
+    color: var(--blanco);
+    background: var(--negro);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 19.5px );
+    -webkit-backdrop-filter: blur( 19.5px );
+    border-radius: 10px;
+}
+}

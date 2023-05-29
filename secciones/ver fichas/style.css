@@ -676,3 +676,50 @@ tr:hover td {
 }
 
 }
+
+
+
+@media screen and (max-width: 1366px) and (max-height:667px) {
+ 
+  
+  #grilla{
+    display: grid;
+    grid-template-areas: 
+    "header  header"
+    "bnv  none"
+    "nF  bF"
+    "F F"
+    "footer  footer"
+    ;
+    grid-template-columns: 80% 20% ;
+    grid-template-rows: 6% 7% 110vh 80vh 2.5%;
+
+  }
+
+  .nuevaFicha__nav{
+    margin-top: 0;
+    margin-bottom: 5%;
+    width: 75vw;
+    height: 103vh;
+    color: var(--blanco);
+    background: var(--negro);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 19.5px );
+    -webkit-backdrop-filter: blur( 19.5px );
+    border-radius: 10px;
+}
+
+
+.Ficha__nav{
+  margin-top: 0;
+  width: 95vw;
+  height: 70vh;
+  color: var(--blanco);
+  background: var(--negro);
+  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+  backdrop-filter: blur( 19.5px );
+  -webkit-backdrop-filter: blur( 19.5px );
+  border-radius: 10px;
+}
+
+}
