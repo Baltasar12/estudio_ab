@@ -12,31 +12,33 @@
     
 <div id="grilla">
 
-    <nav class="navbar">
-        <div class="navbar-container container">
-          <input type="checkbox" name="" id="">
-          <div class="hamburger-lines">
-            <span class="line line1"></span>
-            <span class="line line2"></span>
-            <span class="line line3"></span>
-          </div>
-          <ul class="menu-items">
-            <li class="dropdown">
-              <a href="#">Ficha oficios</a>
-              <ul class="submenu">
-                <li><a class="sub" href="../ver fichas/index.html">Ver fichas</a></li>
-                <li><a class="sub" href="../cargar ficha/index.html">Cargar nueva ficha</a></li>
-                <li><a class="sub" href="../ver todos oficios/index.html">Ver todos los oficios</a></li>
-                <li><a class="sub" href="#">Ver oficios pendientes propios</a></li>
-              </ul>
-            </li>
-            <li><a class="sub" href="../estadisticas/index.html">Estadísticas</a></li>
-            <li><a class="sub" href="../supervision/index.html">Supervisión</a></li>
-            <li><a class="sub" href="#salir">Salir</a></li>
-          </ul>
-          <a href="../../index.html"><img src="../../vmp.png" alt="V.M.P" style="height: 50px;margin-top: 13px;"></a>
+  <nav class="navbar">
+    <div class="main__header">
+        <div>
+        <a href="../../index.html"><img src="../../vmp.png" alt="V.M.P" style="height: 50px;"/></a> 
         </div>
-      </nav>
+        <input id="menu-toggle" type="checkbox" />
+            <label class='menu_button_container' for="menu-toggle">
+                <div class='menu__button'></div>
+            </label>
+        <ul class="main_header_menu">
+
+            <li class="dropdown">
+                <a href="#" class="style--a sub" id="ficha-oficios">Ficha oficios</a>
+                <ul class="submenu" id="submenu-ficha-oficios">
+                  <li><a class="sub" href="../ver fichas/index.html">Ver fichas</a></li>
+                  <li><a class="sub" href="../cargar ficha/index.html">Cargar nueva ficha</a></li>
+                  <li><a class="sub" href="../ver todos oficios/index.html">Ver todos los oficios</a></li>
+                  <li><a class="sub" href="#">Ver oficios pendientes propios</a></li>
+                </ul>
+              </li>
+
+            <li><a href="../estadisticas/index.html" class="sub">Estadísticas</a></li>
+            <li><a href="../supervision/index.html" class="sub">Supervisión</a></li>
+            <li><a href="#" class="sub">Salir</a></li>
+        </ul>
+    </div>
+  </nav>
       
 
     
@@ -249,7 +251,13 @@
         });
 
 
-
+        
+        $(document).on('click', function(event) {
+                var target = event.target;
+                if (!$(target).is('.style--a')) {
+                    $('.submenu').hide();
+                }
+            });
 
     </script>
 </body>
