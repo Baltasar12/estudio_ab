@@ -376,7 +376,7 @@ input[type="text"]{font: 15px/24px "Lato", Arial, sans-serif; color: #333; width
     "footer  footer"
     ;
     grid-template-columns: 80% 20%;
-    grid-template-rows: 8% auto;
+    grid-template-rows: 11% auto;
   }
 
   .nuevaFicha__nav{
@@ -405,7 +405,7 @@ input[type="text"]{font: 15px/24px "Lato", Arial, sans-serif; color: #333; width
     "footer  footer"
     ;
     grid-template-columns: 80% 20%;
-    grid-template-rows: 8% auto;
+    grid-template-rows: 11% auto;
   }
 
   .nuevaFicha__nav{

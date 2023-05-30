@@ -372,7 +372,7 @@
       "footer footer footer"
       ;
       grid-template-columns: 25% 50% 25%;
-      grid-template-rows: 5% 10% 120vh 4%;
+      grid-template-rows: 8% auto;
     }
 
     .generarInforme__nav{
@@ -479,7 +479,7 @@
     "footer footer footer"
     ;
     grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 8% auto;
+    grid-template-rows: 9% auto;
   }
 
   .generarInforme__nav{

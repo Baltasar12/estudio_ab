@@ -500,7 +500,7 @@ footer{
   "footer footer footer"
     ;
     grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 8% auto;
+    grid-template-rows: 11% auto;
   }
 
   .generarInforme__nav{
@@ -625,7 +625,7 @@ footer{
   "footer footer footer"
     ;
     grid-template-columns: 25% 50% 25%;
-    grid-template-rows: 8% 11% 107vh;
+    grid-template-rows: 11% 11% 108vh 2%;
   }
 
   .generarInforme__nav{

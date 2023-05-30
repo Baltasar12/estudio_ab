@@ -421,7 +421,7 @@ tr:hover td {
     "footer  footer"
     ;
     grid-template-columns: 80% 20% ;
-    grid-template-rows: 8% auto;
+    grid-template-rows: 11% auto;
   }
 
   .nuevaFicha__nav{
@@ -451,7 +451,7 @@ tr:hover td {
     "footer  footer"
     ;
     grid-template-columns: 80% 20% ;
-    grid-template-rows: 8% auto;
+    grid-template-rows: 11% auto;
   }
 
   .nuevaFicha__nav{

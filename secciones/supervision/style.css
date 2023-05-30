@@ -463,7 +463,7 @@ tr:hover td {
       "footer  footer"
       ;
       grid-template-columns: 80% 20% ;
-      grid-template-rows: 5% 8% 100vh 67vh 3%;
+      grid-template-rows: 7% 8% 100vh 68vh 3%;
     }
 
     .nuevaFicha__nav{

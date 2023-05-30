@@ -495,7 +495,7 @@ tr:hover td {
     "footer  footer"
     ;
     grid-template-columns: 80% 20% ;
-    grid-template-rows: 5% 8% 100vh 67vh 3%;
+    grid-template-rows: 7% 7% 100vh 70vh 2%;
 
   }
 
@@ -542,7 +542,7 @@ tr:hover td {
     "footer  footer"
     ;
     grid-template-columns: 80% 20% ;
-    grid-template-rows: 6% 7% 110vh 80vh 2.5%;
+    grid-template-rows: 7% 7% 110vh 81vh 2.5%;
 
   }
 
