@@ -68,7 +68,17 @@
     position: relative;
     margin: 14%;
   }
-  
+  .chart--container-1{
+    width: 70vh;
+    height: 35vh;
+    margin-bottom: 5%;
+    color: var(--blanco);
+    background: var(--negro);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 19.5px );
+    -webkit-backdrop-filter: blur( 19.5px );
+    border-radius: 10px;
+  }
 
   
   

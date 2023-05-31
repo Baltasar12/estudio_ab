@@ -33,8 +33,8 @@ body{
 .shape:last-child{
     background: linear-gradient(
         to right,
-        #ff512f,
-        #f09819
+        #012840,
+        #1c54ff
     );
     right: -30px;
     bottom: -80px;

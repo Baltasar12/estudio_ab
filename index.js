@@ -43,6 +43,7 @@ new Chart("chart-dia", {
   data: {
     labels: xValues,
     datasets: [{
+      label: "Oficios contestados por días",
       backgroundColor: barColors,
       data: yValues
     }]
@@ -55,11 +56,17 @@ new Chart("chart-dia", {
     },
     scales:{
       y:{
+        ticks:{
+          color:'white'
+        },
         grid:{
           color: chartColors.grey
         }
       },
       x:{
+        ticks:{
+          color:'white'
+        },
         grid:{
           color: chartColors.grey
         }
@@ -72,6 +79,7 @@ new Chart("chart-persona", {
   data: {
     labels: xValues,
     datasets: [{
+      label: "Oficios contestados por persona",
       backgroundColor: barColors,
       data: yValues
     }]
@@ -84,13 +92,20 @@ new Chart("chart-persona", {
     },
     scales:{
       y:{
+        ticks:{
+          color:'white'
+        },
         grid:{
           color: chartColors.grey
         }
       },
       x:{
+        ticks:{
+          color:'white'
+        },
         grid:{
           color: chartColors.grey
+          
         }
       }
     }
