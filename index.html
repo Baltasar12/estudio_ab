@@ -12,6 +12,7 @@
     <title>V.M.P</title>
 </head>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
 <body>
     
 <div id="grilla">
@@ -87,14 +88,13 @@
         
             <div class="chart--container">
               
-              <div class="chart--container-1">
-                <canvas id="chart-dia" style="width:100%;max-width:700px"></canvas>
+              <div class="chart-container">
+                <div id="chart1" class="chart"><div class="chart-label">Oficios contestados por día</div></div>
               </div>
-             
-              <div class="chart--container-1">
-                <canvas id="chart-persona" style="width:100%;max-width:700px"></canvas>
+            
+              <div class="chart-container">
+                <div id="chart2" class="chart"><div class="chart-label">Oficios contestados por personas</div></div>
               </div>
-
             </div>
 
         </div>

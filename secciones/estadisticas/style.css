@@ -66,19 +66,32 @@
   
   .chart--container{
     position: relative;
-    margin: 14%;
   }
-  .chart--container-1{
-    width: 70vh;
-    height: 35vh;
-    margin-bottom: 5%;
-    color: var(--blanco);
-    background: var(--negro);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 19.5px );
-    -webkit-backdrop-filter: blur( 19.5px );
-    border-radius: 10px;
+  .chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
   }
+
+  .chart { 
+    width: 600px;
+    height: 300px;
+    border: 2px solid var(--negro);
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  .bar {
+    fill: #007bff;
+  }
+
+  .chart-label {
+    text-anchor: middle;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
 
   
   

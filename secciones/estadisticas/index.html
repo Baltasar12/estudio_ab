@@ -12,6 +12,7 @@
     <title>Estadísticas</title>
 </head>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
 <body>
     
 <div id="grilla">
@@ -57,20 +58,21 @@
 
     <div class="oficioDia">
         <div class="oficioDia__chart">
+
+          <div class="chart-container">
+            
+            <div id="chart1" class="chart"><div class="chart-label">Evolución(estadísticas diarias)</div></div>
+          </div>
         
-            <div class="chart--container">
-
-              <div class="chart--container-1">
-                <canvas id="chart-dia" style="width:100%;max-width:700px"></canvas>
-              </div>
-
-              <div class="chart--container-1">
-                <canvas id="chart-dia2" style="width:100%;max-width:700px"></canvas>
-              </div>
-
-              <div class="chart--container-1">
-                <canvas id="chart-mensual" style="width:100%;max-width:700px"></canvas>
-              </div>
+          <div class="chart-container">
+            
+            <div id="chart2" class="chart"><div class="chart-label">Evolución(estadísticas diarias)</div></div>
+          </div>
+        
+          <div class="chart-container">
+            
+            <div id="chart3" class="chart"><div class="chart-label">Evolución(estadísticas mensuales)</div></div>
+          </div>
 
             </div>
 
@@ -119,144 +121,151 @@
             );
           } // End if
         });
-      });
 
-
-
-
-
-    var xValues = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes"];
-    var yValues = [55, 49, 44, 24, 15];
-    var barColors = ["#074073", "#074073","#074073","#074073","#074073"];
-    var chartColors = {
-      red: 'rgb(255, 99, 132)',
-      orange: 'rgb(255, 159, 64)',
-      yellow: 'rgb(255, 205, 86)',
-      green: 'rgb(75, 192, 192)',
-      blue: 'rgb(54, 162, 235)',
-      purple: 'rgb(153, 102, 255)',
-      grey: 'rgb(231,233,237)'
-    } 
-            new Chart("chart-dia", {
-            type: "bar",
-            data: {
-                labels: xValues,
-                datasets: [{
-                label: "Estadísticas diarias",
-                backgroundColor: barColors,
-                data: yValues
-                }]
-            },
-            options: {
-                legend: {display: false},
-                title: {
-                display: true,
-                text: "Estadísticas diarias"
-                },
-            scales:{
-                y:{
-                  ticks:{
-                    color:'white'
-                  },
-                  grid:{
-                    color: chartColors.grey
-                  }
-                },
-                x:{
-                  ticks:{
-                    color:'white'
-                  },
-                  grid:{
-                    color: chartColors.grey
-                  }
-                }
-              }
-            }
-            });
-
-
-            new Chart("chart-dia2", {
-            type: "bar",
-            data: {
-                labels: xValues,
-                datasets: [{
-                label: "Estadísticas diarias",
-                backgroundColor: barColors,
-                data: yValues
-                }]
-            },
-            options: {
-                legend: {display: false},
-                title: {
-                display: true,
-                text: "Estadísticas diarias"
-                },   
-               scales:{
-                    y:{
-                      ticks:{
-                        color:'white'
-                      },
-                      grid:{
-                        color: chartColors.grey
-                      }
-                    },
-                    x:{
-                      ticks:{
-                        color:'white'
-                      },
-                      grid:{
-                        color: chartColors.grey
-                      }
-                    }
-                  }
-                }
-            });
-
-            new Chart("chart-mensual", {
-            type: "bar",
-            data: {
-                labels: xValues,
-                datasets: [{
-                label: "Estadísticas mensuales",
-                backgroundColor: barColors,
-                data: yValues
-                }]
-            },
-            options: {
-                legend: {display: false},
-                title: {
-                display: true,
-                text: "Estadísticas mensuales"
-                },
-            scales:{
-                y:{
-                  ticks:{
-                    color:'white'
-                  },
-                  grid:{
-                    color: chartColors.grey
-                  }
-                },
-                x:{
-                  ticks:{
-                    color:'white'
-                  },
-                  grid:{
-                    color: chartColors.grey
-                  }
-                }
-              }
-            }
-            });
-
-
-
-            $(document).on('click', function(event) {
+        
+        $(document).on('click', function(event) {
                 var target = event.target;
                 if (!$(target).is('.style--a')) {
                     $('.submenu').hide();
                 }
             });
+
+
+      });
+
+
+
+
+      // Datos de ejemplo para el primer gráfico
+const datos1 = [
+  { fecha: '2023-01-01', valor: 10 },
+  { fecha: '2023-02-01', valor: 15 },
+  { fecha: '2023-03-01', valor: 8 },
+  { fecha: '2023-04-01', valor: 12 },
+  { fecha: '2023-05-01', valor: 6 }
+];
+
+// Datos de ejemplo para el segundo gráfico
+const datos2 = [
+  { fecha: '2023-01-01', valor: 5 },
+  { fecha: '2023-02-01', valor: 3 },
+  { fecha: '2023-03-01', valor: 12 },
+  { fecha: '2023-04-01', valor: 8 },
+  { fecha: '2023-05-01', valor: 10 }
+];
+
+// Datos de ejemplo para el tercer gráfico
+const datos3 = [
+  { fecha: '2023-01-01', valor: 7 },
+  { fecha: '2023-02-01', valor: 9 },
+  { fecha: '2023-03-01', valor: 6 },
+  { fecha: '2023-04-01', valor: 11 },
+  { fecha: '2023-05-01', valor: 4 }
+];
+
+// Configuración de los gráficos
+const margin = { top: 20, right: 20, bottom: 40, left: 50 };
+const width = 600 - margin.left - margin.right;
+const height = 300 - margin.top - margin.bottom;
+
+// Crear los elementos SVG para los gráficos
+const svg1 = d3.select("#chart1")
+  .append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+const svg2 = d3.select("#chart2")
+  .append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+const svg3 = d3.select("#chart3")
+  .append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform", `translate(${margin.left}, ${margin.top})`);
+
+// Función para filtrar los datos según el rango de fechas seleccionado
+function filterData() {
+  const startDate = document.getElementById('start-date').value;
+  const endDate = document.getElementById('end-date').value;
+
+  const filteredData1 = datos1.filter(d => d.fecha >= startDate && d.fecha <= endDate);
+  const filteredData2 = datos2.filter(d => d.fecha >= startDate && d.fecha <= endDate);
+  const filteredData3 = datos3.filter(d => d.fecha >= startDate && d.fecha <= endDate);
+
+  updateChart(svg1, filteredData1);
+  updateChart(svg2, filteredData2);
+  updateChart(svg3, filteredData3);
+}
+
+// Función para actualizar el gráfico con los datos filtrados
+function updateChart(svg, data) {
+  // Escala X (Fechas)
+  const xScale = d3.scaleBand()
+    .range([0, width])
+    .padding(0.1);
+
+  // Escala Y (Valores)
+  const yScale = d3.scaleLinear()
+    .range([height, 0]);
+
+  // Ejes X e Y
+  const xAxis = d3.axisBottom(xScale);
+  const yAxis = d3.axisLeft(yScale);
+
+  // Actualizar dominios de escalas
+  xScale.domain(data.map(d => d.fecha));
+  yScale.domain([0, d3.max(data, d => d.valor)]);
+
+  // Eliminar el gráfico anterior
+  svg.selectAll(".bar").remove();
+  svg.selectAll(".x.axis").remove();
+  svg.selectAll(".y.axis").remove();
+
+  // Agregar ejes al SVG
+  svg.append("g")
+    .attr("class", "x axis")
+    .attr("transform", `translate(0, ${height})`)
+    .call(xAxis);
+
+  svg.append("g")
+    .attr("class", "y axis")
+    .call(yAxis);
+
+  // Agregar las barras al gráfico
+  const bars = svg.selectAll(".bar")
+    .data(data, d => d.fecha);
+
+  // Actualizar barras existentes
+  bars.attr("x", d => xScale(d.fecha))
+    .attr("width", xScale.bandwidth())
+    .attr("y", d => yScale(d.valor))
+    .attr("height", d => height - yScale(d.valor));
+
+  // Agregar nuevas barras
+  bars.enter()
+    .append("rect")
+    .attr("class", "bar")
+    .attr("x", d => xScale(d.fecha))
+    .attr("width", xScale.bandwidth())
+    .attr("y", d => yScale(d.valor))
+    .attr("height", d => height - yScale(d.valor));
+}
+
+// Llamar a la función para mostrar los gráficos iniciales
+updateChart(svg1, datos1);
+updateChart(svg2, datos2);
+updateChart(svg3, datos3);
+
+
+
+
 
     </script>
 </body>
